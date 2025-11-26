@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import "./custom.css";
+import FeaturedSlider from "./components/FeaturedSlider";
 
 export default function Home() {
   return (
@@ -7,9 +9,9 @@ export default function Home() {
       className="relative min-h-screen flex flex-col items-center justify-center font-sans overflow-hidden bg-custom-bg"
     >
       {/* Overlay gradient and animated effect */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 opacity-30" />
+      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 opacity-15" />
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="w-full h-full animate-pulse bg-gradient-to-r from-purple-300 via-pink-200 to-yellow-200 opacity-30 blur-2xl" />
+        <div className="w-full h-full breathe-gradient bg-gradient-to-r from-purple-300 via-pink-200 to-yellow-200 opacity-15 blur-2xl" />
       </div>
       <main className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-12 p-6">
         {/* Hero Section */}
@@ -23,19 +25,21 @@ export default function Home() {
             className="drop-shadow-xl"
           />
           <h1
-            className="text-5xl sm:text-6xl font-extrabold text-center text-red-800 tracking-tight mb-10"
+            className="text-5xl sm:text-6xl font-extrabold text-center tracking-tight mb-35"
             style={{
-              textShadow: "2px 2px 8px #222, 0 0 12px #fff"
+              color: 'var(--color-red-primary)',
+              textShadow: "1px 1px 3px #222, 0 0 4px #fff"
             }}
           >
             The Grateful Family
           </h1>
-          <p className="text-xl sm:text-2xl text-center text-gray-700 max-w-2xl mb-2">
+          <p className="text-xl sm:text-2xl text-center max-w-3xl pt-12 mb-2" style={{ color: 'white', textShadow: '1px 1px 3px #222, 0 0 4px #000' }}>
             Colorado’s home for psychedelic art, music, and community. Co-creating, sharing, and celebrating the Grateful Dead spirit.
           </p>
+          <FeaturedSlider />
           <div className="flex gap-4 mt-2">
-            <Link href="/community" className="bg-purple-700 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-800 transition font-semibold text-lg">Community Hub</Link>
-            <Link href="/shop" className="bg-yellow-400 text-purple-900 px-6 py-3 rounded-full shadow-lg hover:bg-yellow-500 transition font-semibold text-lg">Shop Art & Prints</Link>
+            <Link href="/shop" className="px-6 py-3 rounded-full shadow-lg transition font-semibold text-lg shop-btn">Shop Art & Prints</Link>
+            <Link href="/community" className="px-6 py-3 rounded-full shadow-lg transition font-semibold text-lg community-btn">Community Hub</Link>
           </div>
         </div>
 
@@ -43,15 +47,15 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 w-full">
           <div className="bg-white/80 rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:bg-purple-50 transition">
             <Image src="/file.svg" alt="Artist Features" width={48} height={48} className="mb-2" />
-            <h2 className="text-xl font-bold text-purple-800 mb-1">Artist Features</h2>
+            <h2 className="text-xl font-bold mb-1" style={{ color: 'var(--color-blue-primary)' }}>Artist Features</h2>
             <p className="text-gray-600 mb-2">Meet Colorado’s visionary artists, read interviews, and explore their creative journeys.</p>
-            <Link href="/community/blog" className="text-purple-700 font-semibold hover:underline">Explore Blog</Link>
+            <Link href="/community/blog" className="font-semibold hover:underline" style={{ color: 'var(--color-blue-primary)' }}>Explore Blog</Link>
           </div>
           <div className="bg-white/80 rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:bg-pink-50 transition">
             <Image src="/window.svg" alt="Events Calendar" width={48} height={48} className="mb-2" />
-            <h2 className="text-xl font-bold text-pink-700 mb-1">Events Calendar</h2>
+            <h2 className="text-xl font-bold mb-1" style={{ color: 'var(--color-red-primary)' }}>Events Calendar</h2>
             <p className="text-gray-600 mb-2">Discover upcoming shows, festivals, and gatherings in Colorado’s vibrant scene.</p>
-            <Link href="/community/events" className="text-pink-700 font-semibold hover:underline">See Events</Link>
+            <Link href="/community/events" className="font-semibold hover:underline" style={{ color: 'var(--color-red-primary)' }}>See Events</Link>
           </div>
           <div className="bg-white/80 rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:bg-yellow-50 transition">
             <Image src="/vercel.svg" alt="Shop" width={48} height={48} className="mb-2" />

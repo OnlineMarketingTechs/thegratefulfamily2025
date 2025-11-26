@@ -1,0 +1,65 @@
+/* Community Hub button hover effect */
+.community-btn {
+    background-color: var(--color-red-primary);
+    color: white;
+    transition: background 0.3s, border 0.3s;
+    border: 2px solid transparent;
+    text-shadow: 1px 1px 3px #222, 0 0 4px #fff;
+}
+
+.community-btn:hover {
+    background-color: var(--color-blue-primary);
+    border: 2px solid var(--color-red-primary);
+}
+
+/* Shop Art & Prints button hover effect */
+.shop-btn {
+    background-color: var(--color-blue-primary);
+    color: white;
+    transition: background 0.3s, border 0.3s;
+    border: 2px solid transparent;
+    text-shadow: 1px 1px 3px #222, 0 0 4px #fff;
+}
+
+.shop-btn:hover {
+    background-color: var(--color-red-primary);
+    border: 2px solid var(--color-blue-primary);
+}
+
+/* Community Hub button hover effect */
+.community-btn {
+    background-color: var(--color-red-primary);
+    color: white;
+    transition: background 0.3s;
+}
+
+.community-btn:hover {
+    background-color: var(--color-blue-primary);
+}
+
+/* Shop Art & Prints button hover effect */
+.shop-btn {
+    background-color: var(--color-blue-primary);
+    color: white;
+    transition: background 0.3s;
+}
+
+.shop-btn:hover {
+    background-color: var(--color-red-primary);
+}
+
+@keyframes breathe {
+
+    0%,
+    100% {
+        opacity: 0.08;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+}
+
+.breathe-gradient {
+    animation: breathe 5s ease-in-out infinite;
+}
